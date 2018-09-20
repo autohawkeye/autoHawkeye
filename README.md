@@ -1,6 +1,7 @@
 # autoHawkeye
 鹰眼自动化运维监控系统（系统截图及使用见WIKI）
 <img src="https://raw.githubusercontent.com/autohawkeye/autoHawkeye/master/image/QQ%E6%88%AA%E5%9B%BE20180912175305.png"/>
+<img src="https://github.com/autohawkeye/autoHawkeye/blob/master/image/QQ%E6%88%AA%E5%9B%BE20180919225058.png?raw=true"/>
 
 目的：开发一款简单好用，好上手的监控系统，成为运维人员的好帮手。
 
