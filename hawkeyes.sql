@@ -16,10 +16,10 @@ CREATE TABLE `eye_corporation_info` (
   `corporation_address` varchar(255) NOT NULL,
   `corporation_keys` varchar(50) DEFAULT NULL,
   `corporation_status` int(2) DEFAULT '1' COMMENT '1正常，0禁止',
-  `update_time` datetime DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime,
+  `create_time` datetime,
   PRIMARY KEY (`merchant_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_corporation_info
@@ -37,9 +37,9 @@ CREATE TABLE `eye_email_alarm_history` (
   `alarm_title` varchar(100) DEFAULT NULL,
   `alarm_content` varchar(255) DEFAULT NULL,
   `merchant_id` int(5) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `create_time` datetime,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15493 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_email_alarm_history
@@ -61,9 +61,9 @@ CREATE TABLE `eye_email_smtp_server` (
   `merchant_id` int(5) DEFAULT NULL COMMENT '商家ID',
   `is_default` int(11) DEFAULT '0' COMMENT '1默认配置',
   `creator` varchar(50) DEFAULT NULL COMMENT '创建人',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `create_time` datetime COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_email_smtp_server
@@ -79,11 +79,11 @@ CREATE TABLE `eye_email_template` (
   `email_template_name` varchar(100) DEFAULT NULL COMMENT '短信模版名称',
   `email_template_text` varchar(300) DEFAULT NULL COMMENT '短信模版内容',
   `is_delete` int(2) DEFAULT '0' COMMENT '是否删除0未删除1已删除',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `create_time` datetime COMMENT '创建时间',
   `merchant_id` int(5) DEFAULT NULL COMMENT '公司 ID',
   `creator` varchar(50) DEFAULT NULL COMMENT '创建人',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_email_template
@@ -122,12 +122,12 @@ CREATE TABLE `eye_host` (
   `total_disk` varchar(30) DEFAULT NULL COMMENT '磁盘容量',
   `agent_version` varchar(30) DEFAULT NULL,
   `os_version` varchar(50) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
+  `create_time` datetime,
+  `update_time` datetime,
   `status` int(3) DEFAULT '1',
   `merchant_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_host
@@ -147,7 +147,7 @@ CREATE TABLE `eye_info` (
   `spend_time` varchar(100) DEFAULT NULL,
   `service_status` varchar(10) DEFAULT NULL,
   `is_notice` int(5) DEFAULT '0' COMMENT '通知1， 不通知0',
-  `last_time` datetime DEFAULT NULL,
+  `last_time` datetime,
   `checked_times` int(10) DEFAULT '1',
   `check_times` int(10) DEFAULT '2',
   `application_status` int(2) DEFAULT '1',
@@ -155,9 +155,9 @@ CREATE TABLE `eye_info` (
   `phone_number` varchar(50) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `merchant_id` int(5) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `create_time` datetime,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=357 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_info
@@ -176,7 +176,7 @@ CREATE TABLE `eye_info_tcp` (
   `spend_time` varchar(100) DEFAULT NULL,
   `service_status` varchar(10) DEFAULT NULL,
   `is_notice` int(5) DEFAULT '0' COMMENT '通知1， 不通知0',
-  `last_time` datetime DEFAULT NULL,
+  `last_time` datetime,
   `checked_times` int(10) DEFAULT '1',
   `check_times` int(10) DEFAULT '2',
   `application_status` int(2) DEFAULT '1',
@@ -184,9 +184,9 @@ CREATE TABLE `eye_info_tcp` (
   `phone_number` varchar(50) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `merchant_id` int(5) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `create_time` datetime,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=371 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_info_tcp
@@ -204,10 +204,10 @@ CREATE TABLE `eye_linux_alarm_number` (
   `alarm_cpu_five_load` double(10,2) DEFAULT NULL,
   `alarm_network_speed` int(10) DEFAULT '10' COMMENT '默认10M报警',
   `merchant_id` int(5) DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime,
+  `create_time` datetime,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_linux_alarm_number
@@ -228,10 +228,10 @@ CREATE TABLE `eye_linux_cpu` (
   `status` int(2) DEFAULT '1' COMMENT '1正常，2警告，3紧急',
   `is_notice` int(2) DEFAULT '1' COMMENT '1通知，0不通知',
   `merchant_id` int(5) DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime,
+  `create_time` datetime,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_linux_cpu
@@ -249,7 +249,7 @@ CREATE TABLE `eye_linux_cpu_detail` (
   `five_load` varchar(10) DEFAULT NULL,
   `fifteen_load` varchar(10) DEFAULT NULL,
   `merchant_id` int(5) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `create_time` datetime,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -271,10 +271,10 @@ CREATE TABLE `eye_linux_disk` (
   `status` int(2) DEFAULT '1' COMMENT '1正常，2警告，3紧急',
   `is_notice` int(2) DEFAULT '1' COMMENT '1通知，0不通知',
   `merchant_id` int(5) DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime,
+  `create_time` datetime,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_linux_disk
@@ -292,7 +292,7 @@ CREATE TABLE `eye_linux_disk_detail` (
   `free_disk` varchar(20) DEFAULT NULL,
   `disk_rate` varchar(20) DEFAULT NULL,
   `merchant_id` int(5) DEFAULT '0',
-  `create_time` datetime DEFAULT NULL,
+  `create_time` datetime,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -316,8 +316,8 @@ CREATE TABLE `eye_linux_disk_io` (
   `await` double(10,0) DEFAULT NULL COMMENT '平均处理时间',
   `status` int(2) DEFAULT '1' COMMENT '1正常，2警告，3异常',
   `util` double(10,0) DEFAULT NULL COMMENT '使用率',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  `create_time` datetime COMMENT '创建时间',
+  `update_time` datetime COMMENT '更新时间',
   `merchant_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -342,7 +342,7 @@ CREATE TABLE `eye_linux_disk_io_history` (
   `await` varchar(10) DEFAULT NULL COMMENT '平均处理时间',
   `status` int(2) DEFAULT '1' COMMENT '1正常，2警告，3异常',
   `util` varchar(10) DEFAULT NULL COMMENT '使用率',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `create_time` datetime COMMENT '创建时间',
   `merchant_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -370,10 +370,10 @@ CREATE TABLE `eye_linux_host` (
   `status` int(2) DEFAULT '1' COMMENT '1正常，2警告，3紧急',
   `is_notice` int(2) DEFAULT '1' COMMENT '1通知，0不通知',
   `merchant_id` int(5) DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime,
+  `create_time` datetime,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_linux_host
@@ -393,10 +393,10 @@ CREATE TABLE `eye_linux_memory` (
   `status` int(2) DEFAULT '1' COMMENT '1正常，2警告，3紧急',
   `is_notice` int(2) DEFAULT '1' COMMENT '1通知，0不通知',
   `merchant_id` int(5) DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime,
+  `create_time` datetime,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_linux_memory
@@ -414,7 +414,7 @@ CREATE TABLE `eye_linux_memory_detail` (
   `free_memory` varchar(20) DEFAULT NULL,
   `cached_memory` varchar(20) DEFAULT NULL,
   `merchant_id` int(5) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `create_time` datetime,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -434,10 +434,10 @@ CREATE TABLE `eye_linux_network` (
   `status` int(2) DEFAULT '1' COMMENT '1正常，2警告，3紧急',
   `is_notice` int(2) DEFAULT '1' COMMENT '1通知，0不通知',
   `merchant_id` int(5) DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime,
+  `create_time` datetime,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_linux_network
@@ -453,7 +453,7 @@ CREATE TABLE `eye_linux_network_detail` (
   `in_speed` double(20,3) DEFAULT NULL,
   `out_speed` double(20,3) DEFAULT NULL,
   `merchant_id` int(11) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `create_time` datetime,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -501,10 +501,10 @@ CREATE TABLE `eye_mysql_server` (
   `reason` varchar(100) DEFAULT NULL COMMENT '异常原因',
   `is_notice` int(2) DEFAULT '0' COMMENT '0不通知，1通知',
   `merchant_id` int(5) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  `create_time` datetime,
+  `update_time` datetime COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_mysql_server
@@ -519,10 +519,10 @@ CREATE TABLE `eye_mysql_server_alarm` (
   `use_connection_alarm` int(3) DEFAULT '0' COMMENT '连接数使用率',
   `merchant_id` int(5) DEFAULT NULL,
   `creator` varchar(50) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  `create_time` datetime,
+  `update_time` datetime COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_mysql_server_alarm
@@ -562,9 +562,9 @@ CREATE TABLE `eye_mysql_server_history` (
   `key_blocks_used_rate` double(11,2) DEFAULT '0.00' COMMENT '缓存池使用率',
   `slow_queries` bigint(11) DEFAULT '0' COMMENT '慢查询数量',
   `merchant_id` int(5) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `create_time` datetime,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3295 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_mysql_server_history
@@ -580,10 +580,10 @@ CREATE TABLE `eye_phone_alarm_history` (
   `phone_number` varchar(30) DEFAULT NULL,
   `alarm_content` varchar(255) DEFAULT NULL,
   `merchant_id` int(5) DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime,
+  `create_time` datetime,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32202 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_phone_alarm_history
@@ -625,8 +625,8 @@ CREATE TABLE `eye_port_num` (
   `last_ack` int(6) DEFAULT '0',
   `listen` int(6) DEFAULT '0',
   `closing` int(6) DEFAULT '0',
-  `create_time` datetime DEFAULT '0000-00-00 00:00:00',
-  `update_time` datetime DEFAULT '0000-00-00 00:00:00',
+  `create_time` datetime,
+  `update_time` datetime,
   `merchant_id` int(5) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -654,8 +654,8 @@ CREATE TABLE `eye_port_num_detail` (
   `last_ack` int(6) DEFAULT '0',
   `listen` int(6) DEFAULT '0',
   `closing` int(6) DEFAULT '0',
-  `create_time` datetime DEFAULT '0000-00-00 00:00:00',
-  `update_time` datetime DEFAULT '0000-00-00 00:00:00',
+  `create_time` datetime,
+  `update_time` datetime,
   `merchant_id` int(5) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -673,10 +673,10 @@ CREATE TABLE `eye_redis_alarm_number` (
   `alarm_memory` int(15) DEFAULT '100' COMMENT '警告内存，百分比',
   `alarm_connection_client` int(15) DEFAULT '10000' COMMENT '警告连接数，单位个',
   `merchant_id` int(5) DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime,
+  `create_time` datetime,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_redis_alarm_number
@@ -706,14 +706,14 @@ CREATE TABLE `eye_redis_info` (
   `connected_clients` int(10) DEFAULT '0' COMMENT '连接客户端的数量',
   `connected_clients_status` int(5) DEFAULT '1' COMMENT '1正常，2警告',
   `is_notice` int(10) DEFAULT '0' COMMENT '默认通知1，不通知为0',
-  `last_time` datetime DEFAULT NULL,
+  `last_time` datetime,
   `checked_times` int(10) DEFAULT '1',
   `check_times` int(10) DEFAULT '2',
   `merchant_id` int(5) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  `create_time` datetime,
+  `update_time` datetime COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_redis_info
@@ -728,12 +728,12 @@ CREATE TABLE `eye_server_account` (
   `user_name` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
   `creator` varchar(30) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `create_time` datetime,
   `merchant_id` int(11) DEFAULT NULL,
   `status` int(5) DEFAULT '1',
   `is_delete` int(2) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_server_account
@@ -749,11 +749,11 @@ CREATE TABLE `eye_sms_template` (
   `sms_template_name` varchar(100) DEFAULT NULL COMMENT '短信模版名称',
   `sms_template_text` varchar(300) DEFAULT NULL COMMENT '短信模版内容',
   `is_delete` int(2) DEFAULT '0' COMMENT '是否删除0未删除1已删除',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `create_time` datetime COMMENT '创建时间',
   `merchant_id` int(5) DEFAULT NULL COMMENT '公司 ID',
   `creator` varchar(50) DEFAULT NULL COMMENT '创建人',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_sms_template
@@ -771,9 +771,9 @@ CREATE TABLE `eye_ssh_exec` (
   `status` int(3) DEFAULT NULL,
   `take_time` bigint(10) DEFAULT NULL,
   `creator` varchar(30) DEFAULT NULL,
-  `exec_time` datetime DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
+  `exec_time` datetime,
+  `create_time` datetime,
+  `update_time` datetime,
   `merchant_id` int(5) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -795,7 +795,7 @@ CREATE TABLE `eye_ssh_exec_history` (
   `take_time` bigint(11) DEFAULT NULL,
   `status` int(2) DEFAULT NULL,
   `creator` varchar(30) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `create_time` datetime,
   `merchant_id` int(5) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -819,11 +819,11 @@ CREATE TABLE `eye_user` (
   `email` varchar(100) DEFAULT NULL,
   `status` int(10) DEFAULT '0' COMMENT '0正常，1禁用',
   `merchant_id` int(5) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `create_time` datetime,
   `is_login` int(2) DEFAULT '0',
   `account_id` int(5) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eye_user
